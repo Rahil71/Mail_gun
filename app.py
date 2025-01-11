@@ -23,7 +23,6 @@ def home():
         user_email = request.form.get('email')
         user_subject = request.form.get('subject')
         user_body = request.form.get('body')
-        # print(user_email, " ", user_subject, " ", user_body)
         msg = Message(user_subject, sender=sender_mailid, recipients=[user_email])
         msg.body = user_body
         mail.send(msg)
